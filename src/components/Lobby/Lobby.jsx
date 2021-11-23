@@ -2,16 +2,21 @@ import React from 'react'
 import JoinRoom from './JoinRoom'
 import CreateRoom from './CreateRoom'
 
-const Lobby = ({ setIsInGame, setIsServer, setName, name }) => {
+const Lobby = ({ db, setIsInGame, setIsServer, setName, name }) => {
 	return (
 		<div>
 			<JoinRoom
+				db={db}
 				setIsInGame={setIsInGame}
 				setIsServer={setIsServer}
 				setName={setName}
 				name={name}
 			/>
-			<CreateRoom setIsInGame={setIsInGame} setIsServer={setIsServer} />
+			<CreateRoom
+				db={db}
+				setIsInGame={setIsInGame}
+				setIsServer={setIsServer}
+			/>
 		</div>
 	)
 }

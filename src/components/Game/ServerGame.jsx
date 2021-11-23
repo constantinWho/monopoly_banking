@@ -1,14 +1,9 @@
 import React from 'react'
 
-const ServerGame = () => {
+const ServerGame = ({ roomCode }) => {
 	return (
 		<div>
-			<label>
-				<p>Nicole 100M</p>
-			</label>
-			<label>
-				<p>Nicole 100M</p>
-			</label>
+			{roomCode}
 			<label>
 				<p>Nicole 100M</p>
 			</label>
