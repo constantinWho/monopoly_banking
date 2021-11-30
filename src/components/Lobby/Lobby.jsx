@@ -1,22 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import JoinRoom from './JoinRoom'
 import CreateRoom from './CreateRoom'
 
-const Lobby = ({ db, setIsInGame, setIsServer, setName, name }) => {
+const Lobby = props => {
 	return (
 		<div>
-			<JoinRoom
-				db={db}
-				setIsInGame={setIsInGame}
-				setIsServer={setIsServer}
-				setName={setName}
-				name={name}
-			/>
-			<CreateRoom
-				db={db}
-				setIsInGame={setIsInGame}
-				setIsServer={setIsServer}
-			/>
+			<JoinRoom />
+			<CreateRoom />
 		</div>
 	)
 }

@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
 import LoadingButton from '@mui/lab/LoadingButton'
 import Button from '@mui/material/Button'
-
-import { ref, get, set } from 'firebase/database'
+import { get, ref, set } from 'firebase/database'
+import React, { useState } from 'react'
 
 const CreateRoom = ({ db, setIsInGame, setIsServer }) => {
 	let [loading, setLoading] = useState(false)

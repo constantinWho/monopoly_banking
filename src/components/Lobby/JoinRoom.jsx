@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import { ref, get, push } from 'firebase/database'
+import { MonopolyContext } from '../../contexts/MonopolyContext'
+import { useNavigate } from 'react-router-dom'
 
-const JoinRoom = ({ db, setIsInGame, setIsServer, setName, name }) => {
+const JoinRoom = _ => {
+	const { name, setName, db } = useContext(MonopolyContext)
 	let [roomCode, setRoomCode] = useState('')
+	let navigate = useNavigate()
 
 	const handleSubmit = event => {
 		event.preventDefault()
@@ -16,8 +20,7 @@ const JoinRoom = ({ db, setIsInGame, setIsServer, setName, name }) => {
 					push(ref(db, `lobbies/${roomCode}/users`), {
 						name,
 					}).then(_ => {
-						setIsInGame(roomCode)
-						setIsServer(false)
+						navigate(`client/${roomCode}`)
 					})
 				} else {
 					alert("Room Code doesn't exist")

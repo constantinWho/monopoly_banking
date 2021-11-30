@@ -3,7 +3,6 @@ import React from 'react'
 const Pay = () => {
 	return (
 		<div>
-			<hr />
 			<form>
 				<label>
 					Amount:

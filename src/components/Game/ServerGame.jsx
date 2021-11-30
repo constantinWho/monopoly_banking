@@ -1,12 +1,13 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
+import { MonopolyContext } from '../../contexts/MonopolyContext'
 
-const ServerGame = ({ roomCode }) => {
+const ServerGame = props => {
+	const params = useParams()
 	return (
 		<div>
-			{roomCode}
-			<label>
-				<p>Nicole 100M</p>
-			</label>
+			ROOMCODE: {params.roomCode}
+			<label></label>
 		</div>
 	)
 }

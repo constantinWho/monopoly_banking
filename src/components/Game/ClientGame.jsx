@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Pay from './Pay'
 import Get from './Get'
+import { MonopolyContext } from '../../contexts/MonopolyContext'
 
-const ClietGame = ({ name }) => {
+const ClientGame = () => {
+	const { name, setName, db } = useContext(MonopolyContext)
+
 	return (
 		<div>
 			<label>{name}</label>
@@ -14,4 +17,4 @@ const ClietGame = ({ name }) => {
 	)
 }
 
-export default ClietGame
+export default ClientGame
